@@ -25,9 +25,12 @@ namespace BmpToJpg.ViewModels
 
         #region Property
         /// <summary>
-        /// 선택한 폴더 경로
+        /// 변환할 이미지가 있는 폴더 경로
         /// </summary>
         public string SelectedPath { get; set; } = null;
+        /// <summary>
+        /// 변환된 이미지가 저장될 폴더 경로
+        /// </summary>
         public string SavePath { get; set; } = null;
         /// <summary>
         /// 압축률 
@@ -81,16 +84,15 @@ namespace BmpToJpg.ViewModels
                     if (item == null)
                     {
                         // 파일이 없습니다.
+                        MessageBox.Show("변환할 파일이 없습니다.");
                     }
 
                     // 파일이 있을 때
-
-
                     using (Bitmap inputImage = new Bitmap($@"{SelectedPath}\{item}"))
                     {
                         ImageCodecInfo info = ImageCodecInfo.GetImageEncoders().Where(a => a.MimeType.Contains("jpeg")).First();
                         EncoderParameters eParams = new EncoderParameters(1);
-                        eParams.Param[0] = new EncoderParameter(Encoder.Quality, Quality);
+                        eParams.Param[0] = new EncoderParameter(Encoder.Quality, 100-Quality);
                         inputImage.Save($@"{SavePath}\{item}", info, eParams);
                     }
                 }
@@ -99,17 +101,7 @@ namespace BmpToJpg.ViewModels
             {
                 MessageBox.Show(e.Message);
             }
-
-      
-
-            // TODO : 3. JPG이미지로 변환하기
-
-           
-                
-          
         }
         #endregion
     }
-
-
 }

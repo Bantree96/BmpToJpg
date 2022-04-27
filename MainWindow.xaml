@@ -8,7 +8,7 @@
         Title="이미지 압축 프로그램" Height="293.377" Width="314.935" ResizeMode="NoResize">
     <Grid Margin="0,0,2,0">
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition/>  
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">

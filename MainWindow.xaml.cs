@@ -33,5 +33,10 @@ namespace BmpToJpg
         {
             _mainViewModel.Bmp2Jpg();
         }
+
+        private void TextBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            _mainViewModel.TextBoxIntCheck(e);
+        }
     }
 }

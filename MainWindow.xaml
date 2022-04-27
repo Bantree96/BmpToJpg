@@ -5,19 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BmpToJpg"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="변환할 파일 경로 설정" HorizontalAlignment="Left" Margin="35,35,0,0" VerticalAlignment="Top" Width="143" Click="Btn_Select_Path"/>
-        <TextBlock HorizontalAlignment="Left" Margin="208,42,0,0" TextWrapping="Wrap" Text="{Binding SelectedPath}" VerticalAlignment="Top"/>
+        Title="이미지 압축 프로그램" Height="293.377" Width="314.935" ResizeMode="NoResize">
+    <Grid Margin="0,0,2,0">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-        <Button Content="압축률" HorizontalAlignment="Left" Margin="35,121,0,0" VerticalAlignment="Top" Width="75"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="138,121,0,0" TextWrapping="Wrap" Text="{Binding Quality}" VerticalAlignment="Top" Width="120"/>
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Vertical" Margin="10">
+                <Label Content="압축할 이미지 경로"></Label>
+                <TextBox Text="{Binding SelectedPath}" IsReadOnly="True" MouseDoubleClick="Btn_Select_Path" Height="30" ></TextBox>
+                <Label Content="결과 이미지 경로"></Label>
+                <TextBox Text="{Binding SavePath}" IsReadOnly="True" MouseDoubleClick="Btn_Save_Path" Height="30"></TextBox>
+                <Label Content="압축률(%) : 0 ~ 100"></Label>
+                <StackPanel Orientation="Horizontal">
+                    <Slider Value="{Binding Quality, UpdateSourceTrigger=PropertyChanged}" Minimum="0" Maximum="100" Width="160" VerticalAlignment="Center"></Slider>
+                    <TextBox Text="{Binding Quality, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="TextBox_PreviewTextInput" Width="100" />
+                    <ScrollBar></ScrollBar>
+                </StackPanel>
+                <Button Content="이미지변환" Width="275" Click="Btn_Convert" Margin="0 10 0 0" Padding="5"/>
+
+            </StackPanel>
+        </Grid>
+        <!-- 
         
-        <Button Content="저장 경로 설정" HorizontalAlignment="Left" Margin="35,71,0,0" VerticalAlignment="Top" Width="143" Click="Btn_Save_Path"/>
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Vertical">
+                <Label Content="결과 이미지 경로"></Label>
+                <TextBox Text="{Binding SavePath}" IsReadOnly="True" MouseDoubleClick="Btn_Save_Path"></TextBox>
+            </StackPanel>
+        </Grid>
+        <Button Content="변환할 파일 경로 설정" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="143" Click="Btn_Select_Path"/>
+            <TextBlock HorizontalAlignment="Left" Margin="208,42,0,0" TextWrapping="Wrap" Text="{Binding SelectedPath}" VerticalAlignment="Top"/>
+        
+        <Label Content="압축률" Margin="10,121,240,106"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="65,125,0,0" TextWrapping="Wrap" Text="{Binding Quality}" VerticalAlignment="Top" Width="45"/>
+        <Label Content="%" Margin="115,121,152,114"/>
+
+        <Button Content="저장 경로 설정" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="143" Click="Btn_Save_Path"/>
         <TextBlock HorizontalAlignment="Left" Margin="208,74,0,0" TextWrapping="Wrap" Text="{Binding SavePath}" VerticalAlignment="Top"/>
 
 
-        <Button Content="Bmp->Jpg" HorizontalAlignment="Left" Margin="707,389,0,0" VerticalAlignment="Top" Width="75" Click="Btn_Convert"/>
+        <Button Content="이미지변환" HorizontalAlignment="Left" Margin="10,208,0,0" VerticalAlignment="Top" Width="285" Click="Btn_Convert"/>
+        -->
 
     </Grid>
 </Window>

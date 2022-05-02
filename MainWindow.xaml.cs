@@ -1,8 +1,8 @@
-﻿using BmpToJpg.ViewModels;
+﻿using ImageToJpg.ViewModels;
 using System.Windows;
 using System.Windows.Forms;
 
-namespace BmpToJpg
+namespace ImageToJpg
 {
     /// <summary>
     /// MainWindow.xaml에 대한 상호 작용 논리

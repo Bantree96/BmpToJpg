@@ -1,9 +1,8 @@
-﻿<Window x:Class="BmpToJpg.MainWindow"
+﻿<Window x:Class="ImageToJpg.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BmpToJpg"
         mc:Ignorable="d"
         Title="이미지 압축 프로그램" Height="293.377" Width="314.935" ResizeMode="NoResize">
     <Grid Margin="0,0,2,0">
@@ -19,9 +18,9 @@
                 <TextBox Text="{Binding SavePath}" IsReadOnly="True" MouseDoubleClick="Btn_Save_Path" Height="30"></TextBox>
                 <Label Content="압축률(%) : 0 ~ 100"></Label>
                 <StackPanel Orientation="Horizontal">
-                    <Slider Value="{Binding Quality, UpdateSourceTrigger=PropertyChanged}" Minimum="0" Maximum="100" Width="160" VerticalAlignment="Center"></Slider>
-                    <TextBox Text="{Binding Quality, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="TextBox_PreviewTextInput" Width="100" />
-                    <ScrollBar></ScrollBar>
+                    <Slider Value="{Binding Quality, UpdateSourceTrigger=PropertyChanged}" Minimum="0" Maximum="100" Width="225" VerticalAlignment="Center"></Slider>
+                    <TextBox Text="{Binding Quality, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="TextBox_PreviewTextInput" Width="50" />
+                    <!--<ScrollBar></ScrollBar>-->
                 </StackPanel>
                 <Button Content="이미지변환" Width="275" Click="Btn_Convert" Margin="0 10 0 0" Padding="5"/>
 

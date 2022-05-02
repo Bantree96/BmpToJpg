@@ -8,7 +8,7 @@ using System.Threading;
 using System.Windows.Forms;
 using PropertyChanged;
 
-namespace BmpToJpg.ViewModels
+namespace ImageToJpg.ViewModels
 {
     [AddINotifyPropertyChangedInterface]
     public class MainViewModel
@@ -114,9 +114,9 @@ namespace BmpToJpg.ViewModels
                             inputImage.Save($@"{SavePath}\{itemName}.jpg", info, eParams);
                         }
 
-                        MessageBox.Show("압축 완료되었습니다.");
                     }
                 }
+                MessageBox.Show("압축 완료되었습니다.");
             }
             catch(Exception e)
             {
